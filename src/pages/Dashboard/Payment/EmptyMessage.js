@@ -3,11 +3,14 @@ import styled from 'styled-components';
 export default function EmptyMessage() {
   return (
     <>
-      <StyledMessage>
-        Você precisa completar sua inscrição antes de prosseguir pra escolha de ingresso
-      </StyledMessage>
+      <Container>
+        <StyledMessage>
+            Você precisa completar sua inscrição antes de prosseguir pra escolha de ingresso
+        </StyledMessage>
+      </Container>
+      
     </>
-    
+  
   );
 }
 
@@ -20,6 +23,16 @@ const StyledMessage = styled.div`
   font-size: 20px;
   line-height: 23.40px;
   color: #8E8E8E;
+
+`;
+
+const Container = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+
+width: 100%;
+height: 70%;
 
 `;
 

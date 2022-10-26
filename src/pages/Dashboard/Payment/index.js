@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -9,33 +8,38 @@ import PaymentSelection from '../../../components/PaymentSelection/index';
 import TicketsForm from '../../../components/Payment/Options';
 
 export default function Payment() {
-  const navigate = useNavigate();
   const { enrollment } = useEnrollment();
-
-  const [isEnrolled, setisEnrolled] = useState(false);
-
+  const [isEnrolled, setIsEnrolled] = useState(false);
+  const [isTicketSelected, setIsTicketSelected] = useState(false);
 
   useEffect(() => {
     if (enrollment) {
-      setisEnrolled(true);
-    }
-    else{
-      setisEnrolled(false);
+      setIsEnrolled(true);
+    } else {
+      setIsEnrolled(false);
     }
   }, [enrollment]);
 
+  const selectionOrMensage = showSelectionOrMensage();
   return (
     <>
-
       <StyledTypography variant="h4">Ingresso e pagamento</StyledTypography>
-      {isEnrolled === true ? PaymentSelection() : EmptyMessage()}
-      {isEnrolled === '' ? <TicketsForm /> : isEnrolled}
+      {selectionOrMensage}
+      {isTicketSelected === true ? <p>oi</p> : <p>jo</p>}
     </>
-      
   );
+
+  function showSelectionOrMensage() {
+    if (isEnrolled === true) {
+      return EmptyMessage();
+    } else if (isEnrolled === false && isTicketSelected === false) {
+      return PaymentSelection(setIsTicketSelected);
+    } else {
+      return <></>;
+    }
+  }
 }
 
 const StyledTypography = styled(Typography)`
-
   margin-bottom: 20px !important;
 `;

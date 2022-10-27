@@ -24,18 +24,15 @@ export default function Payment() {
   return (
     <>
       <StyledTypography variant="h4">Ingresso e pagamento</StyledTypography>
-      {selectionOrMensage}
-      {isTicketSelected === true ? <p>oi</p> : <p>jo</p>}
+      {isTicketSelected === false && selectionOrMensage}
     </>
   );
 
   function showSelectionOrMensage() {
     if (isEnrolled === true) {
       return EmptyMessage();
-    } else if (isEnrolled === false && isTicketSelected === false) {
-      return PaymentSelection(setIsTicketSelected);
     } else {
-      return <></>;
+      return PaymentSelection(setIsTicketSelected);
     }
   }
 }

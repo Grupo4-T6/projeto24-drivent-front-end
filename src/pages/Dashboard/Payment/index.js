@@ -14,7 +14,6 @@ export default function Payment() {
 
   const [isEnrolled, setisEnrolled] = useState(false);
 
-
   useEffect(() => {
     if (enrollment) {
       setisEnrolled(true);

@@ -27,7 +27,7 @@ export default function Payment() {
       <StyledTypography variant="h4">
         Ingresso e pagamento
       </StyledTypography>
-      {isEnrolled === false ? <PaymentSelection/> : <EmptyMessage/> }
+      {isEnrolled === true ? <PaymentSelection/> : <EmptyMessage/> }
     </>
       
   );

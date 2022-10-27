@@ -54,7 +54,9 @@ export default function CreditCard(props) {
       <FinishedPayment/>
       :
       <>
-        <StyledTypographyy variant="h4">Pagamento</StyledTypographyy>
+        <StyledTypographyy variant="h4">
+          <h2> Pagamento </h2>
+        </StyledTypographyy>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
           <CardSection>
             <CardImage 
@@ -128,17 +130,16 @@ export default function CreditCard(props) {
 };
 
 const StyledTypographyy = styled(Typography)`
-  margin-bottom: 20px!important;
+  margin: 20px 0px!important;
+h2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
 
-
-
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-
-color: #8E8E8E;
+    color: #8e8e8e;
+  }
 `;
 
 const SubmitContainer = styled.div`

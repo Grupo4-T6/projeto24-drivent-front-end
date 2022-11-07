@@ -4,7 +4,9 @@ import Typography from '@material-ui/core/Typography';
 export default function FinishedPayment() {
   return (
     <>
-      <StyledTypographyy variant="h4">Pagamento</StyledTypographyy>
+      <StyledTypographyy variant="h4">
+        <h2> Pagamento </h2>
+      </StyledTypographyy>
       <Container>
         <ion-icon name="checkmark-circle"></ion-icon>
         <Text>
@@ -52,11 +54,14 @@ text-align: left;
 
 const StyledTypographyy = styled(Typography)`
   margin-bottom: 20px!important;
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
+  h2 {
+    margin-top: 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
 
-color: #8E8E8E;
+    color: #8e8e8e;
+  }
 `;

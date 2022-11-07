@@ -6,7 +6,6 @@ import useEnrollment from '../../../hooks/api/useEnrollment';
 import Typography from '@material-ui/core/Typography';
 import EmptyMessage from './EmptyMessage';
 
-import CreditCard from '../../../components/CreditCard/index';
 import PaymentSelection from '../../../components/PaymentSelection/index';
 
 export default function Payment() {

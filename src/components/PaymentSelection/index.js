@@ -52,7 +52,7 @@ export default function PaymentSelection() {
           <Selectors>
             <Selector onClick={() => {
               setIsHotelSelected(false);
-              setPrice(0);
+              setPrice(250);
             }} active={ isHotelSelected === false}>
               <h4>Sem Hotel</h4>
               <p>+ R$ 0</p>

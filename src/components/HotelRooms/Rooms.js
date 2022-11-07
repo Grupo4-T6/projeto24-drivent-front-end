@@ -4,19 +4,22 @@ import { BsPerson } from '@react-icons/all-files/bs/BsPerson';
 import { BsPersonFill } from '@react-icons/all-files/bs/BsPersonFill';
 import useHotel from '../../hooks/api/useHotel';
 
-export default function RenderHotel() {
+export default function RenderHotel(props) {
   const [color, setColor] = useState('#8C8C8C');
   const [room, setRoom] = useState([]);
   const selected = <BsPersonFill color={'#FF4791'} />;
-
+  const roomsRender = [];
   const hotelId = 2;
   const { rooms } = useHotel(hotelId);
 
-  const roomsRender = [];
-  function render(rooms) {  
+  function selectRoom(id) {
+    console.log(id);
+  };
+
+  function render(rooms) { 
     for(let i=0; i<rooms.length; i++ ) {
       roomsRender.push(
-        <RoomContainer color={color} >
+        <RoomContainer key={rooms[i].id} id={rooms[i].id} color={color} onClick={console.log(this)}>
           <Number>{rooms[i].roomNumber}</Number>
           <RoomBox>
             {checkAvaible(rooms[i].maxOcupation, rooms[i].spacesTaked)}
@@ -27,7 +30,6 @@ export default function RenderHotel() {
   };
 
   function checkAvaible(maxOcupation, spacesTaked) {
-    console.log(maxOcupation, spacesTaked);
     const empty = <BsPerson />; 
     const full = <BsPersonFill color={'#8C8C8C'}/>;
     const occupied = <BsPersonFill color={'#000000'} />;
@@ -51,7 +53,7 @@ export default function RenderHotel() {
       person.map((e) => {return e; } )
     );
   };
-
+  props.handleRoomId(hotelId);
   return (
     <>
       <Container>

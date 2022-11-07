@@ -9,7 +9,7 @@ export default function HotelRooms() {
   const updateRoom = r => {
     setRoomId(r);
   };
-  console.log(roomId);
+  console.log('This is the roomId', roomId);
   return(
     <>
       <Container>
